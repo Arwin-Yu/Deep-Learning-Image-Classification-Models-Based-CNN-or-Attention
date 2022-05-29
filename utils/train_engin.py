@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 from utils.distrubute_utils import  is_main_process, reduce_value
 from utils.lr_methods import warmup
-
+ 
 def train_one_epoch(model, optimizer, data_loader, device, epoch, use_amp=False, lr_method=None):
     model.train()
     loss_function = torch.nn.CrossEntropyLoss()
@@ -76,9 +76,7 @@ def evaluate(model, data_loader, device):
     num_samples = len(data_loader.dataset) 
     # 用于存储预测正确的样本个数
     sum_num = torch.zeros(1).to(device)
-
-    # if is_main_process():
-    #     data_loader = tqdm(data_loader, file=sys.stdout)
+ 
     for step, data in enumerate(data_loader):
         images, labels = data
         pred = model(images.to(device))
