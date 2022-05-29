@@ -119,7 +119,7 @@ def main(args):
     save_path = os.path.join(os.getcwd(), 'results/weights', args.model)
     if os.path.exists(save_path) is False:
         os.makedirs(save_path)
-        
+
     for epoch in range(args.epochs):
         # train
         mean_loss, train_acc = train_one_epoch(model=model, optimizer=optimizer, data_loader=train_loader, device=device, epoch=epoch, lr_method=warmup)
@@ -128,8 +128,11 @@ def main(args):
         # validate
         val_acc = evaluate(model=model, data_loader=val_loader, device=device)
 
-        #print("[epoch {}] accuracy: {}".format(epoch, round(acc, 3)))
+ 
         print('[epoch %d] train_loss: %.3f  train_acc: %.3f  val_accuracy: %.3f' %  (epoch + 1, mean_loss, train_acc, val_acc))   
+        with open(os.path.join(save_path, "AlexNet_log.txt"), 'a') as f: 
+                f.writelines('[epoch %d] train_loss: %.3f  train_acc: %.3f  val_accuracy: %.3f' %  (epoch + 1, mean_loss, train_acc, val_acc) + '\n')
+
         if opt.tensorboard:
             tags = ["train_loss", "train_acc", "val_accuracy", "learning_rate"]
             tb_writer.add_scalar(tags[0], mean_loss, epoch)
@@ -143,6 +146,5 @@ def main(args):
             torch.save(model.state_dict(), os.path.join(save_path, "AlexNet.pth")) 
 
 if __name__ == '__main__':
-
 
     main(opt)
