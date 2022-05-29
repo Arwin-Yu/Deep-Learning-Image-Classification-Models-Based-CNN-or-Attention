@@ -114,7 +114,12 @@ def main(args):
     # Scheduler https://arxiv.org/pdf/1812.01187.pdf
     lf = lambda x: ((1 + math.cos(x * math.pi / args.epochs)) / 2) * (1 - args.lrf) + args.lrf  # cosine
     scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)
-
+    best_acc = 0.
+    # save parameters path
+    save_path = os.path.join(os.getcwd(), 'results/weights', args.model)
+    if os.path.exists(save_path) is False:
+        os.makedirs(save_path)
+        
     for epoch in range(args.epochs):
         # train
         mean_loss, train_acc = train_one_epoch(model=model, optimizer=optimizer, data_loader=train_loader, device=device, epoch=epoch, lr_method=warmup)
@@ -132,14 +137,12 @@ def main(args):
             tb_writer.add_scalar(tags[2], val_acc, epoch)
             tb_writer.add_scalar(tags[3], optimizer.param_groups[0]["lr"], epoch)
 
-        if os.path.exists("/data/haowen_yu/code/results/weights/vggnet") is False:
-            os.makedirs("/data/haowen_yu/code/results/weights/vggnet")
-        torch.save(model.state_dict(), "/data/haowen_yu/code/results/weights/vggnet/model-{}.pth".format(epoch))
-
+        # 判断当前验证集的准确率是否是最大的，如果是，则更新之前保存的权重
+        if val_acc > best_acc:
+            best_acc = val_acc
+            torch.save(model.state_dict(), os.path.join(save_path, "AlexNet.pth")) 
 
 if __name__ == '__main__':
 
 
     main(opt)
-
- 
