@@ -3,9 +3,10 @@
 # 1. 使用argparse类实现可以在训练的启动命令中指定超参数
 # 2. 可以通过在启动命令中指定 --seed 来固定网络的初始化方式，以达到结果可复现的效果
 # 3. 可以通过在启动命令中指定 --tensorboard 来进行tensorboard可视化, 默认不启用。
+# 4. 可以通过在启动命令中指定 --model 来选择使用的模型
 #    注意，使用tensorboad之前需要使用命令 "tensorboard --logdir= log_path"来启动，结果通过网页 http://localhost:6006/'查看可视化结果
-# 4. 使用了一个更合理的学习策略：在训练的第一轮使用一个较小的lr（warm_up），从第二个epoch开始，随训练轮数逐渐减小lr。
-# 5. 使用amp包实现半精度训练，在保证准确率的同时尽可能的减小训练成本
+# 5. 使用了一个更合理的学习策略：在训练的第一轮使用一个较小的lr（warm_up），从第二个epoch开始，随训练轮数逐渐减小lr。
+# 6. 使用amp包实现半精度训练，在保证准确率的同时尽可能的减小训练成本
 
 # 训练命令示例： # python train.py --model alexnet --num_classes 5
 ############################################################################################################
@@ -61,12 +62,11 @@ if opt.seed:
 
 def main(args):
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
-
     print(args)
 
     if opt.tensorboard:
         # 这是存放你要使用tensorboard显示的数据的绝对路径
-        log_path =  '/data/haowen_yu/code/classification/results/tensorboard/vggnet'
+        log_path = os.path.join('/data/haowen_yu/code/classification/results/tensorboard' , args.model)
         print('Start Tensorboard with "tensorboard --logdir={}"'.format(log_path)) 
 
         if os.path.exists(log_path) is False:
@@ -86,28 +86,23 @@ def main(args):
         "val": transforms.Compose([transforms.Resize(256),
                                    transforms.CenterCrop(224),
                                    transforms.ToTensor(),
-                                   transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])}
-
-    data_root = args.data_path 
-
+                                   transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])} 
  
     # 对标pytorch封装好的ImageFlolder，我们自己实现了一个数据加载类 Five_Flowers_Load，并使用指定的预处理操作来处理图像，结果会同时返回图像和对应的标签。 
     # train_dataset = datasets.ImageFolder(root=os.path.join(data_path, "train"), transform=data_transform["train"])
     # validate_dataset = datasets.ImageFolder(root=os.path.join(data_path, "val"), transform=data_transform["val"])
-    train_dataset = Five_Flowers_Load(os.path.join(data_root, 'train'), transform=data_transform["train"])
-    val_dataset = Five_Flowers_Load(os.path.join(data_root, 'val'), transform=data_transform["val"]) 
+    train_dataset = Five_Flowers_Load(os.path.join(args.data_path , 'train'), transform=data_transform["train"])
+    val_dataset = Five_Flowers_Load(os.path.join(args.data_path , 'val'), transform=data_transform["val"]) 
  
     if args.num_classes != train_dataset.num_class:
         raise ValueError("dataset have {} classes, but input {}".format(train_dataset.num_class, args.num_classes))
  
-
-    batch_size = args.batch_size
-    nw = min([os.cpu_count(), batch_size if batch_size > 1 else 0, 8])  # number of workers
+    nw = min([os.cpu_count(), args.batch_size if args.batch_size > 1 else 0, 8])  # number of workers
     print('Using {} dataloader workers every process'.format(nw))
 
     # 使用 DataLoader 将加载的数据集处理成批量（batch）加载模式
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=nw, collate_fn=train_dataset.collate_fn)
-    val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size, shuffle=False, pin_memory=True,  num_workers=nw, collate_fn=val_dataset.collate_fn)
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, pin_memory=True, num_workers=nw, collate_fn=train_dataset.collate_fn)
+    val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, pin_memory=True,  num_workers=nw, collate_fn=val_dataset.collate_fn)
  
     # create model
     model = cnn_models.find_model_using_name(opt.model, num_classes=opt.num_classes).to(device) 
