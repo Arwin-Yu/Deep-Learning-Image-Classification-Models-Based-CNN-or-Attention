@@ -3,8 +3,8 @@
 ## Introduction
 This project organizes classic convolutional neural networks:
 
-1. AlexNet
-2. ZFNet
+1. AlexNet        Blog Introduction Link: https://blog.csdn.net/qq_39297053/article/details/123839843
+2. ZFNet          Blog Introduction Link: WRINTING
 3. VggNet
 4. GoogleNet
 5. ResNet
