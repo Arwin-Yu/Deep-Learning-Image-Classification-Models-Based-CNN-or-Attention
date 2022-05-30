@@ -6,7 +6,7 @@ import torch.nn as nn
 from torchvision import transforms, datasets 
 import torch.optim as optim 
 from tqdm import tqdm  
-from cnn_models.alexnet import AlexNet
+from classic_models.alexnet import AlexNet
  
 def main():
     # 判断可用设备
