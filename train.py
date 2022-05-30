@@ -7,6 +7,12 @@
 #    注意，使用tensorboad之前需要使用命令 "tensorboard --logdir= log_path"来启动，结果通过网页 http://localhost:6006/'查看可视化结果
 # 5. 使用了一个更合理的学习策略：在训练的第一轮使用一个较小的lr（warm_up），从第二个epoch开始，随训练轮数逐渐减小lr。
 # 6. 使用amp包实现半精度训练，在保证准确率的同时尽可能的减小训练成本
+############################################################################################################
+# --model 可选的超参如下：
+# alexnet   zfnet   vgg   vgg_tiny   vgg_small   vgg_big   googlenet   resnet_small   resnet   resnet_big   resnext   resnext_big  
+# densenet_tiny   densenet_small   densenet   densenet_big   mobilenet_v3   mobilenet_v3_large   shufflenet_small   shufflenet
+# efficient_v2_small   efficient_v2   efficient_v2_large   convnext_tiny   convnext_small   convnext   convnext_big   convnext_huge
+# vision_transformer_small   vision_transformer   vision_transformer_big   swin_transformer_tiny   swin_transformer_small   swin_transformer 
 
 # 训练命令示例： # python train.py --model alexnet --num_classes 5
 ############################################################################################################
@@ -29,18 +35,15 @@ from dataload.dataload_five_flower import Five_Flowers_Load
 from utils.train_engin import train_one_epoch, evaluate 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--num_classes', type=int, default=100)
-parser.add_argument('--epochs', type=int, default=50)
-parser.add_argument('--batch-size', type=int, default=256)
-parser.add_argument('--lr', type=float, default=0.0002)
-parser.add_argument('--lrf', type=float, default=0.0001)
-parser.add_argument('--seed', default=False, action='store_true')
-parser.add_argument('--tensorboard', default=False, action='store_true')
-# 数据集所在根目录
-parser.add_argument('--data-path', type=str, default="/data/haowen_yu/code/dataset/flowers")
-parser.add_argument('--model', type=str, default="vgg")
-parser.add_argument('--weights', type=str, default='', help='initial weights path')
-parser.add_argument('--freeze-layers', type=bool, default=False)
+parser.add_argument('--num_classes', type=int, default=100, help='the number of classes')
+parser.add_argument('--epochs', type=int, default=50, help='the number of training epoch')
+parser.add_argument('--batch_size', type=int, default=256, help='batch_size for training')
+parser.add_argument('--lr', type=float, default=0.0002, help='star learning rate')
+parser.add_argument('--lrf', type=float, default=0.0001, help='end learning rate')
+parser.add_argument('--seed', default=False, action='store_true', help='fix the initialization of parameters')
+parser.add_argument('--tensorboard', default=False, action='store_true', help=' use tensorboard for visualization') 
+parser.add_argument('--data_path', type=str, default="/data/haowen_yu/code/dataset/flowers")
+parser.add_argument('--model', type=str, default="vgg", help=' select a model for training') 
 parser.add_argument('--device', default='cuda', help='device id (i.e. 0 or 0,1 or cpu)')
 
 opt = parser.parse_args()  
@@ -146,5 +149,6 @@ def main(args):
             torch.save(model.state_dict(), os.path.join(save_path, "AlexNet.pth")) 
 
 if __name__ == '__main__':
+
 
     main(opt)
