@@ -6,9 +6,7 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib.pyplot as plt
 
-from cnn_models.alexnet import AlexNet
-# import os
-# os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'  
+from classic_models.alexnet import AlexNet 
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
