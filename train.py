@@ -28,7 +28,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 import torch.optim.lr_scheduler as lr_scheduler 
 
-import cnn_models 
+import classic_models 
 from utils.lr_methods import warmup
 from dataload.dataload_mini_imagenet import MyDataSet
 from dataload.dataload_five_flower import Five_Flowers_Load
