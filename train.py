@@ -108,7 +108,7 @@ def main(args):
     val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, pin_memory=True,  num_workers=nw, collate_fn=val_dataset.collate_fn)
  
     # create model
-    model = cnn_models.find_model_using_name(opt.model, num_classes=opt.num_classes).to(device) 
+    model = classic_models.find_model_using_name(opt.model, num_classes=opt.num_classes).to(device) 
 
     pg = [p for p in model.parameters() if p.requires_grad]
     # optimizer = optim.SGD(pg, lr=args.lr, momentum=0.9, weight_decay=4E-5)
