@@ -9,6 +9,7 @@ from .zfnet import zfnet
 from .googlenet_v1 import googlenet
 from .resnet import  resnet34, resnet50, resnet101, resnext50_32x4d, resnext101_32x8d
 from .densenet import densenet121, densenet161, densenet169, densenet201
+from .dla import dla34
 from .mobilenet_v3 import mobilenet_v3_small, mobilenet_v3_large
 from .shufflenet_v2 import shufflenet_v2_x0_5, shufflenet_v2_x1_0
 from .efficientnet_v2 import efficientnetv2_l, efficientnetv2_m, efficientnetv2_s
@@ -33,6 +34,7 @@ cfgs = {
     'densenet_small': densenet161,
     'densenet': densenet169,
     'densenet_big': densenet121,
+    'dla': dla34, 
     'mobilenet_v3': mobilenet_v3_small,
     'mobilenet_v3_large': mobilenet_v3_large,
     'shufflenet_small':shufflenet_v2_x0_5,
