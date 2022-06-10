@@ -56,7 +56,7 @@ train.py
 ## configures
 本项目是使用python语言基于pytorch深度学习框架编写的。
 此外，我写了三个训练脚本用于模型的训练，默认的数据集是花朵数据集，此数据集包含五种不同种类共三千多张花朵图像，下载链接：链接：https://pan.baidu.com/s/1EhPMVLOQlLNN55ndrLbh4Q 
-提取码：7799 。如要使用，请指定参超到数据集地址/flowers（eg： --data_path /.../.../.../flowers）
+提取码：7799 。如要使用，请指定参超到数据集地址/flower（eg： --data_path /.../.../.../flower）
 
 三个训练脚本中，train_sample.py是最简单的实现；train.py是升级版的实现，具体改进点见train.py脚本中的注释; train_distrubuted.py支持多gpu分布式训练。  
 
