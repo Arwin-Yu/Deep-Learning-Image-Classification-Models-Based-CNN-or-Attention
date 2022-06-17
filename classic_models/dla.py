@@ -174,5 +174,5 @@ def dla34(num_classes, **kwargs):  # DLA-34
  
     return model
 
-net = dla34(5)
-summary(net.to('cuda'), (3, 224,224))
+# net = dla34(5)
+# summary(net.to('cuda'), (3, 224,224))
