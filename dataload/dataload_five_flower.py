@@ -66,5 +66,4 @@ class Five_Flowers_Load(Dataset):
         images = torch.stack(images, dim=0) 
         labels = torch.as_tensor(labels)  
         return images, labels
-
-Five_Flowers_Load('/data/haowen_yu/code/dataset/flowers/train')
+ 
