@@ -24,7 +24,7 @@ This readme is introduced in Chinese (including most of the comments in the code
 
 数据集图像展示如下： 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/102544244/192847344-958812cc-0988-4fa4-a458-ed842c41b8d2.png"  alt="Dataset show" width="450"/>
+  <img src="https://user-images.githubusercontent.com/102544244/192847344-958812cc-0988-4fa4-a458-ed842c41b8d2.png"  alt="Dataset show" width="600"/>
 </div>
   
  
@@ -32,12 +32,12 @@ This readme is introduced in Chinese (including most of the comments in the code
 
 开启模型的训练只需要在IDE中执行train_sample.py脚本即可；或者在终端执行命令行`python train_sample.py` 训练的log打印示例如下：
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/102544244/192849338-d7297768-88d4-40f8-83b6-79962ace7fd4.png"  alt="training log" width="350"/>
+  <img src="https://user-images.githubusercontent.com/102544244/192849338-d7297768-88d4-40f8-83b6-79962ace7fd4.png"  alt="training log" width="500"/>
 </div>
  
 将训练好的模型用于推理，给一张向日葵的图像，模型的输出结果示例结果如下：
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/102544244/192850216-f9ebf217-97f9-4c87-a5e5-4c1e032f436b.png"  alt="infer show" width="300"/>
+  <img src="https://user-images.githubusercontent.com/102544244/192850216-f9ebf217-97f9-4c87-a5e5-4c1e032f436b.png"  alt="infer show" width="400"/>
 </div>
  
 
