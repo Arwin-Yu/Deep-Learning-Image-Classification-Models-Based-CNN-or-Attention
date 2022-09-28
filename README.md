@@ -1,12 +1,30 @@
 # Deep-Learning-Models-For-Classification
+This project organizes classic classification Neural Networks based  convolution or attention mechanism.
+
 This readme is introduced in Chinese (including most of the comments in the code). Please translate it into English if necessary.
+
 ## Introduction
 
-以下是本项目支持的模型列表，包含了自AelxNet以来经典的深度学习分类模型，大部分模型是基于卷积神经网络的，也有一部分是基于注意力机制的。  
+以下是本项目支持的模型列表，包含了自AelxNet以来经典的深度学习分类模型，大部分模型是基于卷积神经网络的，也有一部分是基于注意力机制的。  博客链接是对模型的介绍，会持续更新...
 
-模型代码在classic_models文件夹中。博客链接是对模型的介绍，有一些正在编写，会持续更新...
+在项目目录中，模型的搭建代码在classic_models文件夹中；所有的模型训练代码是共用的，有三个版本：
+- train_sample.py是最简单的实现，必须掌握，以下版本看个人能力和需求。
+- train.py是升级版的实现，具体改进的地方见train.py脚本中的注释。
+- train_distrubuted.py支持多gpu分布式训练。  
 
-This project organizes classic classification Neural Networks based  convolution or attention mechanism:
+最后，test.py是推理脚本，用于使用训练好的模型。dataload中是数据集加载代码；utils是封装的功能包，包括学习策略，训练和验证，分布式初始化，可视化等等。建议先学习掌握classic_models，train_sample.py和test.py这三部分。
+
+## Dataset And Project 
+本项目是使用python语言基于pytorch深度学习框架编写的。
+
+默认的数据集是花朵数据集，此数据集包含五种不同种类的花朵图像，用于训练的图像有3306张，用于验证的图像有364张。下载链接如下：https://pan.baidu.com/s/1EhPMVLOQlLNN55ndrLbh4Q 
+提取码：7799 。
+
+**下载完成后，记得在训练和推理代码中，将数据集加载的路径修改成自己电脑中下载存储的路径。**
+
+数据集图像展示如下： 
+![Dataset show](https://user-images.githubusercontent.com/102544244/192847344-958812cc-0988-4fa4-a458-ed842c41b8d2.png)
+
 
 1. AlexNet        
 Blog Introduction Link: https://blog.csdn.net/qq_39297053/article/details/123839843  
