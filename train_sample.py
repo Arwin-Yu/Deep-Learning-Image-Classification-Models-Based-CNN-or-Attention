@@ -14,7 +14,7 @@ def main():
     print("using {} device.".format(device))
 
     # 注意改成自己的数据集路径
-    data_path = '/data/haowen_yu/code/dataset/flowers'
+    data_path = 'D:\\Datasets\\flower'
     assert os.path.exists(data_path), "{} path does not exist.".format(data_path) 
 
     # 数据预处理与增强
@@ -69,15 +69,12 @@ def main():
     epochs = 70
     save_path = os.path.abspath(os.path.join(os.getcwd(), './results/weights/alexnet')) 
     if not os.path.exists(save_path):    
-        os.mkdir(save_path)
+        os.makedirs(save_path)
 
-    best_acc = 0.0 # 初始化验证集上最好的准确率，以便后面用该指标筛选模型最优参数。
-    train_steps = len(train_loader) # epoch是迭代训练数据集的次数，train_steps是数据集可以被分成的批次数量 = num(dataset) / batch_size
-
+    best_acc = 0.0 # 初始化验证集上最好的准确率，以便后面用该指标筛选模型最优参数。  
     for epoch in range(epochs):
         ############################################################## train ######################################################
-        net.train()
-        train_loss = torch.zeros(1).to(device) # 初始化，用于计算训练损失
+        net.train() 
         acc_num = torch.zeros(1).to(device)    # 初始化，用于计算训练过程中预测正确的数量
         sample_num = 0                         # 初始化，用于记录当前迭代中，已经计算了多少个样本
         # tqdm是一个进度条显示器，可以在终端打印出现在的训练进度
@@ -94,8 +91,7 @@ def main():
             loss.backward() # 自动求导
             optimizer.step() # 梯度下降
 
-            # print statistics
-            train_loss += loss.detach()  / (step + 1)
+            # print statistics 
             train_acc = acc_num.item() / sample_num 
             # .desc是进度条tqdm中的成员变量，作用是描述信息
             train_bar.desc = "train epoch[{}/{}] loss:{:.3f}".format(epoch + 1,  epochs, loss)
@@ -111,14 +107,13 @@ def main():
                 acc_num += torch.eq(predict_y, val_labels.to(device)).sum().item() 
 
         val_accurate = acc_num / val_num
-        print('[epoch %d] train_loss: %.3f  train_acc: %.3f  val_accuracy: %.3f' %  (epoch + 1, train_loss / train_steps , train_acc, val_accurate))   
+        print('[epoch %d] train_loss: %.3f  train_acc: %.3f  val_accuracy: %.3f' %  (epoch + 1, loss, train_acc, val_accurate))   
         # 判断当前验证集的准确率是否是最大的，如果是，则更新之前保存的权重
         if val_accurate > best_acc:
             best_acc = val_accurate
             torch.save(net.state_dict(), os.path.join(save_path, "AlexNet.pth") )
 
-        # 每次迭代后清空这些指标，重新计算
-        train_loss = 0.0
+        # 每次迭代后清空这些指标，重新计算 
         train_acc = 0.0
         val_accurate = 0.0
 
@@ -127,3 +122,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
