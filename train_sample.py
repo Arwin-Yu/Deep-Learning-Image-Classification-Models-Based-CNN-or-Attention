@@ -8,6 +8,7 @@ import torch.optim as optim
 from tqdm import tqdm  
 from classic_models.alexnet import AlexNet
  
+
 def main():
     # 判断可用设备
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -51,12 +52,10 @@ def main():
         json_file.write(json_str)
 
     batch_size = 64 # batch_size大小，是超参，可调，如果模型跑不起来，尝试调小batch_size
-    num_workers = min([os.cpu_count(), batch_size if batch_size > 1 else 0, 8])  # 用于加载数据集的进程数量
-    print('Using {} dataloader workers every process'.format(num_workers))
-
+ 
     # 使用 DataLoader 将 ImageFloder 加载的数据集处理成批量（batch）加载模式
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
-    validate_loader = torch.utils.data.DataLoader(validate_dataset, batch_size=4, shuffle=False,  num_workers=num_workers) # 注意，验证集不需要shuffle
+    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True )
+    validate_loader = torch.utils.data.DataLoader(validate_dataset, batch_size=4, shuffle=False ) # 注意，验证集不需要shuffle
     print("using {} images for training, {} images for validation.".format(train_num, val_num))
     
     # 实例化模型，并送进设备
@@ -64,7 +63,7 @@ def main():
     net.to(device)
 
     # 指定损失函数用于计算损失；指定优化器用于更新模型参数；指定训练迭代的轮数，训练权重的存储地址
-    loss_function = nn.CrossEntropyLoss() 
+    loss_function = nn.CrossEntropyLoss() # MSE
     optimizer = optim.Adam(net.parameters(), lr=0.0002)
     epochs = 70
     save_path = os.path.abspath(os.path.join(os.getcwd(), './results/weights/alexnet')) 
@@ -119,6 +118,6 @@ def main():
 
     print('Finished Training')
 
-
+ 
 if __name__ == '__main__':
     main()
