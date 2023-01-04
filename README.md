@@ -41,13 +41,13 @@ This readme is introduced in Chinese (including most of the comments in the code
  
 
 ## 3. Methods And Papers
-1. AlexNet        
+- 1. AlexNet        
 Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%BA%8Calexnet)
 
-2. ZFNet      
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B8%89zfnet)
+- 2. ZFNet      
+Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B8%89zfnet)
 
-3. VggNet  
+- 3. VggNet  
 Blog Introduction Link: [博文传送门]
 (http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%9B%9Bvgg)
 
