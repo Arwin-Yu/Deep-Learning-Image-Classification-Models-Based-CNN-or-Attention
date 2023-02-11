@@ -186,15 +186,16 @@ class ExitFLow(nn.Module):
 
         return output
 
+
 class Xception(nn.Module):
 
-    def __init__(self, block, num_class=100):
+    def __init__(self, block, num_classes=100):
         super().__init__()
         self.entry_flow = EntryFlow()
         self.middel_flow = MiddleFlow(block)
         self.exit_flow = ExitFLow()
 
-        self.fc = nn.Linear(2048, num_class)
+        self.fc = nn.Linear(2048, num_classes)
 
     def forward(self, x):
         x = self.entry_flow(x)
@@ -206,5 +207,4 @@ class Xception(nn.Module):
         return x
 
 def xception(num_classes):
-    return Xception(MiddleFLowBlock, num_class=num_classes)
-
+    return Xception(MiddleFLowBlock, num_classes=num_classes)
