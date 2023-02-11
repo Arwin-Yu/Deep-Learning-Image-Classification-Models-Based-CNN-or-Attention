@@ -6,16 +6,15 @@ import torch.nn as nn
 from torchvision import transforms, datasets 
 import torch.optim as optim 
 from tqdm import tqdm  
-from classic_models.alexnet import AlexNet
- 
-
+#from classic_models.alexnet import AlexNet
+from classic_models.googlenet_v1 import  GoogLeNet
 def main():
     # 判断可用设备
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print("using {} device.".format(device))
 
     # 注意改成自己的数据集路径
-    data_path = 'D:\\Datasets\\flower'
+    data_path = '/mnt/d/Datasets/flower'
     assert os.path.exists(data_path), "{} path does not exist.".format(data_path) 
 
     # 数据预处理与增强
@@ -59,7 +58,8 @@ def main():
     print("using {} images for training, {} images for validation.".format(train_num, val_num))
     
     # 实例化模型，并送进设备
-    net = AlexNet(num_classes=5, init_weights=True)
+    net = GoogLeNet(num_classes = 5)
+    #net = AlexNet(num_classes=5 )
     net.to(device)
 
     # 指定损失函数用于计算损失；指定优化器用于更新模型参数；指定训练迭代的轮数，训练权重的存储地址
@@ -78,14 +78,13 @@ def main():
         sample_num = 0                         # 初始化，用于记录当前迭代中，已经计算了多少个样本
         # tqdm是一个进度条显示器，可以在终端打印出现在的训练进度
         train_bar = tqdm(train_loader, file=sys.stdout, ncols=100)
-        for step, data in enumerate(train_bar):
-            images, labels = data
-            sample_num += images.shape[0]
+        for data in train_bar :
+            images, labels = data 
+            sample_num += images.shape[0] #[64, 3, 224, 224]
             optimizer.zero_grad()
             outputs = net(images.to(device)) # output_shape: [batch_size, num_classes]
             pred_class = torch.max(outputs, dim=1)[1] # torch.max 返回值是一个tuple，第一个元素是max值，第二个元素是max值的索引。
-            acc_num += torch.eq(pred_class, labels.to(device)).sum()
-
+            acc_num += torch.eq(pred_class, labels.to(device)).sum() 
             loss = loss_function(outputs, labels.to(device)) # 求损失
             loss.backward() # 自动求导
             optimizer.step() # 梯度下降
@@ -101,8 +100,8 @@ def main():
         with torch.no_grad(): 
             for val_data in validate_loader:
                 val_images, val_labels = val_data
-                outputs = net(val_images.to(device))
-                predict_y = torch.max(outputs, dim=1)[1]
+                outputs = net(val_images.to(device)) 
+                predict_y = torch.max(outputs, dim=1)[1] 
                 acc_num += torch.eq(predict_y, val_labels.to(device)).sum().item() 
 
         val_accurate = acc_num / val_num
@@ -119,5 +118,6 @@ def main():
     print('Finished Training')
 
  
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+main()
