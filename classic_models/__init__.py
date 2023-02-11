@@ -1,12 +1,8 @@
-import random
-import os
-import numpy as np
-import torch
-
 from .alexnet import alexnet
 from .vggnet import vgg11, vgg13, vgg16, vgg19
 from .zfnet import zfnet 
 from .googlenet_v1 import googlenet
+from .xception import xception
 from .resnet import  resnet34, resnet50, resnet101, resnext50_32x4d, resnext101_32x8d
 from .densenet import densenet121, densenet161, densenet169, densenet201
 from .dla import dla34
@@ -25,6 +21,7 @@ cfgs = {
     'vgg_small': vgg13,
     'vgg_big': vgg19,
     'googlenet': googlenet,
+    'xception': xception,    
     'resnet_small': resnet34,
     'resnet': resnet50,
     'resnet_big': resnet101,
