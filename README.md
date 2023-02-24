@@ -5,7 +5,7 @@ This readme is introduced in Chinese (including most of the comments in the code
 
 ## 1. Introduction
 
-以下是本项目支持的模型列表，包含了自 AelxNet 以来经典的深度学习图像分类模型，大部分模型是基于卷积神经网络的，也有一部分是基于注意力机制的。 博客链接是对模型的介绍，会持续更新...
+本项目包含了自 AelxNet 以来经典的深度学习图像分类模型，大部分模型是基于卷积神经网络的，也有一部分是基于注意力机制的。 博客链接是对模型的介绍，会持续更新...
 
 在项目目录中，模型的搭建代码在classic_models文件夹中；**所有的模型训练代码和推理代码都是共用的，只有模型搭建代码不同**，训练代码有三个不同的版本：
 - train_sample.py是最简单的实现，必须掌握，以下两个版本看个人需求。
@@ -41,6 +41,7 @@ This readme is introduced in Chinese (including most of the comments in the code
  
 
 ## 3. Methods And Papers
+以下是本项目支持的模型列表
 - 1. AlexNet        
 Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%BA%8Calexnet)
 
