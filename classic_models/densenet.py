@@ -1,16 +1,14 @@
-import re
-from typing import Any, List, Tuple
+from typing import Tuple
 from collections import OrderedDict
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import torch.utils.checkpoint as cp
+import torch.nn.functional as F 
 from torch import Tensor
 
 
 class _DenseLayer(nn.Module):
-    def __init__(self, input_c: int, growth_rate: int, bn_size: int, drop_rate: float, memory_efficient: bool = False):
+    def __init__(self, input_c: int, growth_rate: int, bn_size: int, drop_rate: float ):
         super(_DenseLayer, self).__init__()
 
         self.add_module("norm1", nn.BatchNorm2d(input_c))
@@ -20,42 +18,13 @@ class _DenseLayer(nn.Module):
         self.add_module("relu2", nn.ReLU(inplace=True))
         self.add_module("conv2", nn.Conv2d(bn_size * growth_rate, growth_rate, kernel_size=3, stride=1, padding=1, bias=False))
         self.drop_rate = drop_rate
-        self.memory_efficient = memory_efficient
-
-    def bn_function(self, inputs: List[Tensor]):
-        concat_features = torch.cat(inputs, 1)
-        bottleneck_output = self.conv1(self.relu1(self.norm1(concat_features)))
-        return bottleneck_output
-
-    @staticmethod
-    def any_requires_grad(inputs: List[Tensor]):
-        for tensor in inputs:
-            if tensor.requires_grad:
-                return True
-        return False
-
-    @torch.jit.unused
-    def call_checkpoint_bottleneck(self, inputs: List[Tensor]):
-        def closure(*inp):
-            return self.bn_function(inp)
-
-        return cp.checkpoint(closure, *inputs)
+ 
 
     def forward(self, inputs: Tensor):
-        if isinstance(inputs, Tensor):
-            prev_features = [inputs]
-        else:
-            prev_features = inputs
-
-        if self.memory_efficient and self.any_requires_grad(prev_features):
-            if torch.jit.is_scripting():
-                raise Exception("memory efficient not supported in JIT")
-
-            bottleneck_output = self.call_checkpoint_bottleneck(prev_features)
-        else:
-            bottleneck_output = self.bn_function(prev_features)
-
+        concat_features = torch.cat(inputs, 1)
+        bottleneck_output = self.conv1(self.relu1(self.norm1(concat_features)))
         new_features = self.conv2(self.relu2(self.norm2(bottleneck_output)))
+        
         if self.drop_rate > 0:
             new_features = F.dropout(new_features,  p=self.drop_rate, training=self.training)
 
@@ -63,14 +32,14 @@ class _DenseLayer(nn.Module):
 
 
 class _DenseBlock(nn.ModuleDict): 
-    def __init__(self, num_layers: int, input_c: int, bn_size: int, growth_rate: int,  drop_rate: float,  memory_efficient: bool = False):
+    def __init__(self, num_layers: int, input_c: int, bn_size: int, growth_rate: int,  drop_rate: float ):
         super(_DenseBlock, self).__init__()
         for i in range(num_layers):
-            layer = _DenseLayer(input_c + i * growth_rate, growth_rate=growth_rate, bn_size=bn_size, drop_rate=drop_rate,  memory_efficient=memory_efficient)
+            layer = _DenseLayer(input_c + i * growth_rate, growth_rate=growth_rate, bn_size=bn_size, drop_rate=drop_rate )
             self.add_module("denselayer%d" % (i + 1), layer)
 
     def forward(self, init_features: Tensor):
-        features = [init_features]
+        features = [init_features]  
         for name, layer in self.items():
             new_features = layer(features)
             features.append(new_features)
@@ -100,7 +69,6 @@ class DenseNet(nn.Module):
           (i.e. bn_size * k features in the bottleneck layer)
         drop_rate (float) - dropout rate after each dense layer
         num_classes (int) - number of classification classes
-        memory_efficient (bool) - If True, uses checkpointing. Much more memory efficient
     """
 
     def __init__(self,
@@ -109,8 +77,7 @@ class DenseNet(nn.Module):
                  num_init_features: int = 64,
                  bn_size: int = 4,
                  drop_rate: float = 0,
-                 num_classes: int = 1000,
-                 memory_efficient: bool = False):
+                 num_classes: int = 1000):
         super(DenseNet, self).__init__()
 
         # first conv+bn+relu+pool
@@ -129,7 +96,7 @@ class DenseNet(nn.Module):
                                 bn_size=bn_size,
                                 growth_rate=growth_rate,
                                 drop_rate=drop_rate,
-                                memory_efficient=memory_efficient)
+                                )
             self.features.add_module("denseblock%d" % (i + 1), block)
             num_features = num_features + num_layers * growth_rate
 
