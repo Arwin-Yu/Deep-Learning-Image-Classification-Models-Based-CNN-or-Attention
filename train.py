@@ -147,4 +147,6 @@ def main(args):
             torch.save(model.state_dict(), os.path.join(save_path, "AlexNet.pth")) 
 
         
-main(opt)
+if __name__ == '__main__':         
+    main(opt)
+
