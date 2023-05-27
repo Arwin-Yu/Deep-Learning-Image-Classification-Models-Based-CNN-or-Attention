@@ -1,5 +1,4 @@
-import math 
-from torchsummary import summary
+import math  
 import torch
 from torch import nn  
 
