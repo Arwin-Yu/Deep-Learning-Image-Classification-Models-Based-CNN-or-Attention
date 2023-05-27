@@ -1,6 +1,5 @@
 import torch.nn as nn
-import torch
-from torchsummary import summary
+import torch 
 
 # 与AlexNet有两处不同： 1. 第一次的卷积核变小，步幅减小。 2. 第3，4，5层的卷积核数量增加了。
 class ZFNet(nn.Module):
