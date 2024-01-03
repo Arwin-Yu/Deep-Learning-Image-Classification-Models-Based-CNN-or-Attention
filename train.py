@@ -25,7 +25,6 @@ import random
 import numpy as np
 import torch
 import torch.optim as optim
-from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 import torch.optim.lr_scheduler as lr_scheduler 
 
@@ -69,6 +68,7 @@ def main(args):
     print(args)
 
     if opt.tensorboard:
+        from torch.utils.tensorboard import SummaryWriter
         # 这是存放你要使用tensorboard显示的数据的绝对路径
         log_path = os.path.join('./results/tensorboard' , args.model)
         print('Start Tensorboard with "tensorboard --logdir={}"'.format(log_path)) 
