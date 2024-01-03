@@ -1,5 +1,13 @@
 # CUDA_VISIBLE_DEVICES=0,2,4,6 torchrun --nproc_per_node=4  train_distributed.py --num_classes 5 --model vgg
-# 推荐阅读参考博文： https://blog.csdn.net/orangerfun/article/details/123887725
+"""
+该命令是一个用于启动分布式训练的复合命令，涉及几个关键部分：
+
+CUDA_VISIBLE_DEVICES=0,2,4,6: 这是一个环境变量设置，用于指定哪些GPU设备可供PyTorch使用。在这个例子中，它设置PyTorch只能看到和使用编号为0、2、4、6的GPU。这对于确保您的脚本只在特定的GPU上运行非常有用，特别是在多GPU环境中。
+torchrun: torchrun 是PyTorch的一个实用工具，用于启动分布式训练。它是 torch.distributed.launch 模块的一个简化版，用于更容易地启动多进程分布式训练。它会为您处理环境变量的设置和进程的启动。
+--nproc_per_node=4: 这个参数告诉 torchrun 在每个节点（在这个上下文中，一个节点是一台机器）上启动多少个进程。在您的命令中，它设置为4，这意味着将在您的机器上启动4个分布式训练进程。
+--num_classes 5 --model vgg: 这些是传递给 train_distributed.py 脚本的参数。在这里，--num_classes 5 指定了模型应该输出5个类别，--model vgg 指定使用的模型是VGG网络。
+"""
+
 import os
 import math
 import shutil
@@ -11,7 +19,6 @@ import numpy as np
 import torch
 import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler 
-from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 
 import classic_models
@@ -64,6 +71,7 @@ def main(args):
     args.lr *= args.world_size  # 学习率要根据并行GPU的数量进行倍增
 
     if opt.tensorboard:
+        from torch.utils.tensorboard import SummaryWriter
         # 这是存放你要使用tensorboard显示的数据的绝对路径 
         log_path = os.path.join('/data/haowen_yu/code/classification/results/tensorboard' , args.model)
         print('Start Tensorboard with "tensorboard --logdir={}"'.format(log_path)) 
