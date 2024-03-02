@@ -81,7 +81,7 @@ Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vit%ef%
 - 12. Swin_Transformer  
 Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/swin-transformer%ef%bc%9a%e7%aa%97%e5%8f%a3%e5%8c%96%e7%9a%84transformer/)
 
-- 13. Visual Attention Network 
+- 13. Visual Attention Network
 Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/van%ef%bc%9a%e5%9f%ba%e4%ba%8e%e5%8d%b7%e7%a7%af%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b/)
 
 - 14. ConvNeXt
