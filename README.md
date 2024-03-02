@@ -43,49 +43,52 @@ This readme is introduced in Chinese (including most of the comments in the code
 ## 3. Methods And Papers
 以下是本项目支持的模型列表
 - 1. AlexNet        
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%BA%8Calexnet)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/alexnet%ef%bc%9a%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%b4%9b%e8%b5%b7%e7%9a%84%e6%a0%87%e5%bf%97/)
 
 - 2. ZFNet      
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B8%89zfnet)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vggnet%ef%bc%9a%e5%8d%b7%e7%a7%af%e5%8e%9f%e7%90%86%e7%9a%84%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90/)
 
 - 3. VggNet  
-Blog Introduction Link:   [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%9B%9Bvgg)
+Blog Introduction Link:   [博文传送门](https://www.aideeplearning.cn/vggnet-%e6%8e%a2%e7%b4%a2%e6%b7%b1%e5%ba%a6%e7%9a%84%e5%8a%9b%e9%87%8f/))
 
 - 4. GoogleNet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%BA%94googlenet)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/googlenet%ef%bc%9a%e6%8e%a2%e7%b4%a2%e5%ae%bd%e5%ba%a6%e7%9a%84%e5%8a%9b%e9%87%8f/))
 
 - 5. ResNet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%85%ADresnet)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/resnet%ef%bc%9a%e7%a5%9e%e6%9d%a5%e4%b9%8b%e8%b7%af/))
 
 - 6. DenseNet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B8%83densenet)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/densenet%ef%bc%9a%e7%89%b9%e5%be%81%e5%a4%8d%e7%94%a8%e7%9c%9f%e9%a6%99/))
 
 - 7. SENet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%85%ABsenet)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/senet%ef%bc%9a%e9%80%9a%e9%81%93%e7%bb%b4%e5%ba%a6%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9c%ba%e5%88%b6/))
 
 - 8. MobileNet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B9%9Dmobilenet%E7%B3%BB%E5%88%97v1v1v3)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/mobilenet%ef%bc%9a%e8%bd%bb%e9%87%8f%e5%8c%96%e6%a8%a1%e5%9e%8b/))
 
 - 9. ShuffleNet  
-Blog Introduction Link: [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81shufflenet%E7%B3%BB%E5%88%97v1v2)
+Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/shufflenet%e8%bd%bb%e9%87%8f%e5%8c%96%e7%bd%91%e7%bb%9c/))
 
 - 10. EfficientNet  
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%B8%80eifficientnet%E7%B3%BB%E5%88%97%E7%B3%BB%E5%88%97v1v2)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/efficientnet%e8%bd%bb%e9%87%8f%e5%8c%96%e7%bd%91%e7%bb%9c/))
+
+- 11. RepVGG  
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/repvgg%ef%bc%9a%e6%96%b0%e5%9e%8b%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%9e%b6%e6%9e%84/)
 
 - 11. Vision_Transformer  
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%BA%8Cvisiontransformer)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vit%ef%bc%9a%e8%a7%86%e8%a7%89transformer/))
 
 - 12. Swin_Transformer  
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%B8%89swintransformer)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/swin-transformer%ef%bc%9a%e7%aa%97%e5%8f%a3%e5%8c%96%e7%9a%84transformer/)
 
 - 13. Visual Attention Network 
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%BA%8Cvisiontransformer)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/van%ef%bc%9a%e5%9f%ba%e4%ba%8e%e5%8d%b7%e7%a7%af%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b/)
 
 - 14. ConvNeXt
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%BA%94convnext)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/convnext%ef%bc%9a%e5%8d%b7%e7%a7%af%e4%b8%8e%e8%ae%be%e8%ae%a1%e7%ad%96%e7%95%a5%e7%9a%84%e6%96%b0%e7%af%87%e7%ab%a0/)
 
 - 15. MLP-Mixer
-Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E5%85%ADmlp-mixer)
+Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/wp-admin/post.php?post=3328&action=edit)
 
 - 16. AS-MLP
 Blog Introduction Link:  [博文传送门](http://124.220.164.99:8090/archives/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%8D%81%E4%B8%83as-mlp)
