@@ -90,8 +90,8 @@ This readme is introduced in Chinese (including most of the comments in the code
 16. **[MLP-Mixer](https://arxiv.org/abs/2105.01601)**
     - *MLP-Mixer: An All-MLP Architecture for Vision*
 
-17. **[AS-MLP](https://arxiv.org/abs/2208.11842)**
-    - *AS-MLP: Adaptive Selective MLP for Efficient Vision*
+17. **[AS-MLP](https://arxiv.org/abs/2107.08391)**
+    - *AS-MLP: An Axial Shifted MLP Architecture for Vision*
 
 18. **[ConvMixer](https://arxiv.org/abs/2112.10752)**
     - *Patches Are All You Need?*
