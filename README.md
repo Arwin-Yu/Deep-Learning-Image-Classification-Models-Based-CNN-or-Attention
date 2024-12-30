@@ -81,8 +81,8 @@ This readme is introduced in Chinese (including most of the comments in the code
 13. **[Swin Transformer](https://arxiv.org/abs/2103.14030)**
     - *Swin Transformer: Hierarchical Vision Transformer using Shifted Windows*
 
-14. **[Visual Attention Network](https://arxiv.org/abs/2012.08776)**
-    - *Visual Attention Network for Efficient Image Recognition*
+14. **[Visual Attention Network](https://arxiv.org/abs/2202.09741)**
+    - *Visual Attention Network*
 
 15. **[ConvNeXt](https://arxiv.org/abs/2201.03545)**
     - *A ConvNet for the 2020s*
