@@ -93,10 +93,10 @@ This readme is introduced in Chinese (including most of the comments in the code
 17. **[AS-MLP](https://arxiv.org/abs/2107.08391)**
     - *AS-MLP: An Axial Shifted MLP Architecture for Vision*
 
-18. **[ConvMixer](https://arxiv.org/abs/2112.10752)**
+18. **[ConvMixer](https://arxiv.org/abs/2201.09792)**
     - *Patches Are All You Need?*
 
-19. **[MetaFormer](https://arxiv.org/abs/2201.09588)**
+19. **[MetaFormer](https://arxiv.org/abs/2111.11418)**
     - *MetaFormer is Actually What You Need for Vision*
 
 ---
