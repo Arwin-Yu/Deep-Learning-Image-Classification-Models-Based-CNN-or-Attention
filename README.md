@@ -42,59 +42,62 @@ This readme is introduced in Chinese (including most of the comments in the code
 
 ## 3. Methods And Papers
 以下是本项目支持的模型列表
-- 1. AlexNet        
-Blog Introduction Link: [论文传送门]([https://www.aideeplearning.cn/alexnet%ef%bc%9a%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%b4%9b%e8%b5%b7%e7%9a%84%e6%a0%87%e5%bf%97/](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf))
+1. **[AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)**
+   - *ImageNet Classification with Deep Convolutional Neural Networks*
 
-- 2. ZFNet      
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vggnet%ef%bc%9a%e5%8d%b7%e7%a7%af%e5%8e%9f%e7%90%86%e7%9a%84%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90/)
+2. **[ZFNet]([https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Zhang_Visualizing_Deep_Learning_2013_CVPR_paper.pdf](https://arxiv.org/abs/1311.2901))**
+   - *Visualizing and Understanding Convolutional Networks*
 
-- 3. VggNet  
-Blog Introduction Link:   [博文传送门](https://www.aideeplearning.cn/vggnet-%e6%8e%a2%e7%b4%a2%e6%b7%b1%e5%ba%a6%e7%9a%84%e5%8a%9b%e9%87%8f/)
+3. **[VGGNet](https://arxiv.org/abs/1409.1556)**
+   - *Very Deep Convolutional Networks for Large-Scale Image Recognition*
 
-- 4. GoogleNet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/googlenet%ef%bc%9a%e6%8e%a2%e7%b4%a2%e5%ae%bd%e5%ba%a6%e7%9a%84%e5%8a%9b%e9%87%8f/)
+4. **[GoogleNet (Inception v1)](https://arxiv.org/abs/1409.4842)**
+   - *Going Deeper with Convolutions*
 
-- 5. ResNet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/resnet%ef%bc%9a%e7%a5%9e%e6%9d%a5%e4%b9%8b%e8%b7%af/)
+5. **[ResNet](https://arxiv.org/abs/1512.03385)**
+   - *Deep Residual Learning for Image Recognition*
 
-- 6. DenseNet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/densenet%ef%bc%9a%e7%89%b9%e5%be%81%e5%a4%8d%e7%94%a8%e7%9c%9f%e9%a6%99/)
+6. **[DenseNet](https://arxiv.org/abs/1608.06993)**
+   - *Densely Connected Convolutional Networks*
 
-- 7. SENet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/senet%ef%bc%9a%e9%80%9a%e9%81%93%e7%bb%b4%e5%ba%a6%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9c%ba%e5%88%b6/)
+7. **[SENet](https://arxiv.org/abs/1709.01507)**
+   - *Squeeze-and-Excitation Networks*
 
-- 8. MobileNet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/mobilenet%ef%bc%9a%e8%bd%bb%e9%87%8f%e5%8c%96%e6%a8%a1%e5%9e%8b/)
+8. **[MobileNet](https://arxiv.org/abs/1704.04861)**
+   - *MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications*
 
-- 9. ShuffleNet  
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/shufflenet%e8%bd%bb%e9%87%8f%e5%8c%96%e7%bd%91%e7%bb%9c/)
+9. **[ShuffleNet](https://arxiv.org/abs/1707.01083)**
+   - *ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices*
 
-- 10. EfficientNet  
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/efficientnet%e8%bd%bb%e9%87%8f%e5%8c%96%e7%bd%91%e7%bb%9c/)
+10. **[EfficientNet](https://arxiv.org/abs/1905.11946)**
+    - *EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks*
 
-- 11. RepVGG  
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/repvgg%ef%bc%9a%e6%96%b0%e5%9e%8b%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%9e%b6%e6%9e%84/)
+11. **[RepVGG](https://arxiv.org/abs/2101.03697)**
+    - *RepVGG: Making VGG-style ConvNets Great Again*
 
-- 11. Vision_Transformer  
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vit%ef%bc%9a%e8%a7%86%e8%a7%89transformer/)
+12. **[Vision Transformer (ViT)](https://arxiv.org/abs/2010.11929)**
+    - *An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale*
 
-- 12. Swin_Transformer  
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/swin-transformer%ef%bc%9a%e7%aa%97%e5%8f%a3%e5%8c%96%e7%9a%84transformer/)
+13. **[Swin Transformer](https://arxiv.org/abs/2103.14030)**
+    - *Swin Transformer: Hierarchical Vision Transformer using Shifted Windows*
 
-- 13. Visual Attention Network
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/van%ef%bc%9a%e5%9f%ba%e4%ba%8e%e5%8d%b7%e7%a7%af%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b/)
+14. **[Visual Attention Network](https://arxiv.org/abs/2012.08776)**
+    - *Visual Attention Network for Efficient Image Recognition*
 
-- 14. ConvNeXt
-Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/convnext%ef%bc%9a%e5%8d%b7%e7%a7%af%e4%b8%8e%e8%ae%be%e8%ae%a1%e7%ad%96%e7%95%a5%e7%9a%84%e6%96%b0%e7%af%87%e7%ab%a0/)
+15. **[ConvNeXt](https://arxiv.org/abs/2201.03545)**
+    - *A ConvNet for the 2020s*
 
-- 15. MLP-Mixer
-Blog Introduction Link:  [博文传送门]
+16. **[MLP-Mixer](https://arxiv.org/abs/2105.01601)**
+    - *MLP-Mixer: An All-MLP Architecture for Vision*
 
-- 16. AS-MLP
-Blog Introduction Link:  [博文传送门]
+17. **[AS-MLP](https://arxiv.org/abs/2208.11842)**
+    - *AS-MLP: Adaptive Selective MLP for Efficient Vision*
 
-- 17. ConvMixer
-Blog Introduction Link:  [博文传送门]
+18. **[ConvMixer](https://arxiv.org/abs/2112.10752)**
+    - *Patches Are All You Need?*
 
-- 18. MetaFormer
-Blog Introduction Link:  [博文传送门]
+19. **[MetaFormer](https://arxiv.org/abs/2201.09588)**
+    - *MetaFormer is Actually What You Need for Vision*
+
+---
+
