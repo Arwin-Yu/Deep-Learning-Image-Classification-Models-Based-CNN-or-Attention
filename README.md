@@ -43,7 +43,7 @@ This readme is introduced in Chinese (including most of the comments in the code
 ## 3. Methods And Papers
 以下是本项目支持的模型列表
 - 1. AlexNet        
-Blog Introduction Link: [博文传送门](https://www.aideeplearning.cn/alexnet%ef%bc%9a%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%b4%9b%e8%b5%b7%e7%9a%84%e6%a0%87%e5%bf%97/)
+Blog Introduction Link: [论文传送门]([https://www.aideeplearning.cn/alexnet%ef%bc%9a%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e5%b4%9b%e8%b5%b7%e7%9a%84%e6%a0%87%e5%bf%97/](https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf))
 
 - 2. ZFNet      
 Blog Introduction Link:  [博文传送门](https://www.aideeplearning.cn/vggnet%ef%bc%9a%e5%8d%b7%e7%a7%af%e5%8e%9f%e7%90%86%e7%9a%84%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90/)
