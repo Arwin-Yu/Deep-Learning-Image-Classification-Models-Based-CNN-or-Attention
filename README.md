@@ -45,7 +45,7 @@ This readme is introduced in Chinese (including most of the comments in the code
 1. **[AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)**
    - *ImageNet Classification with Deep Convolutional Neural Networks*
 
-2. **[ZFNet]([https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Zhang_Visualizing_Deep_Learning_2013_CVPR_paper.pdf](https://arxiv.org/abs/1311.2901))**
+2. **[ZFNet](https://arxiv.org/abs/1311.2901)**
    - *Visualizing and Understanding Convolutional Networks*
 
 3. **[VGGNet](https://arxiv.org/abs/1409.1556)**
